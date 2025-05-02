@@ -108,3 +108,25 @@ This project aims to build an AI-powered system that predicts the likelihood of 
 
 1. Clone the repo:# Project-2
 AI credit card
+
+
+
+# deployment on Stream lit
+
+import streamlit as st
+import joblib
+import numpy as np
+
+model = joblib.load('fraud_model.pkl')
+
+st.title('Credit Card Fraud Detection')
+
+amount = st.number_input('Transaction Amount')
+v_features = [st.number_input(f'V{i}') for i in range(1, 29)]
+
+input_data = np.array(v_features + [amount]).reshape(1, -1)
+prediction = model.predict(input_data)
+
+if st.button('Predict'):
+    result = 'Fraudulent' if prediction[0] == 1 else 'Not Fraudulent'
+    st.write(f'Transaction is: **{result}**')
