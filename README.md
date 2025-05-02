@@ -105,14 +105,6 @@ This project aims to build an AI-powered system that predicts the likelihood of 
 ---
 
 ## How to Run
-
-1. Clone the repo:# Project-2
-AI credit card
-
-
-
-# deployment on Streamlit
-
 import streamlit as st
 import joblib
 import numpy as np
