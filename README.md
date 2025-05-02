@@ -111,7 +111,7 @@ AI credit card
 
 
 
-# deployment on Stream lit
+# deployment on Streamlit
 
 import streamlit as st
 import joblib
